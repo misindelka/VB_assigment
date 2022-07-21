@@ -20,14 +20,14 @@
     "paths": {
       "@client/*": ["./client/*"],
       "@public/*": ["./public/*"],
-      "@assets/*": ["./assets/*"],
-    },
+      "@assets/*": ["./assets/*"]
+    }
   },
   "include": [
     "./.eslintrc.js",
     "./vite.config.ts",
     "./server/**/*",
     "./client/**/*",
-    "./assets/**/*",
+    "./assets/**/*"
   ]
 }
