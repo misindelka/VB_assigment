@@ -1,18 +1,16 @@
 // External Imports
 import styled from 'styled-components'
 
-// Component Types
+//  internal Imports
+import { CompanyType } from '@client/graphql'
 
-interface Icompany {
-  id: string
-  name: string
-  stage: string
-  sector: string
-  investmentSize: number
+// types
+interface IProps {
+  companies: CompanyType[]
+  openModal: () => void
 }
 
 // Styled Types
-
 interface IStyledProps {
   textPosition: string
   right: string
@@ -85,7 +83,7 @@ const Button = styled.button`
 
 // Component
 
-export const ComapniesOverviewTable: React.FC = ({ companies, openModal }: any) => {
+export const ComapniesOverviewTable: React.FC<IProps> = ({ companies, openModal }: IProps) => {
   return (
     <>
       <TitleWrapper>
@@ -110,7 +108,7 @@ export const ComapniesOverviewTable: React.FC = ({ companies, openModal }: any) 
             </Row>
           </TableHead>
           <tbody>
-            {companies?.map((company: Icompany, i: number) => (
+            {companies?.map((company: CompanyType, i: number) => (
               <Row key={company.id} index={i}>
                 <TableData textPosition="start" right="0px">
                   {company.name}
