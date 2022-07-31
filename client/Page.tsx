@@ -9,6 +9,7 @@ import { ComapniesOverviewTable } from './components/CompaniesOverviewTable'
 import { AddNewCompanyModal } from './components/Modal/AddNewCompanyModal'
 import { ComapniesInvestemetGraph } from './components/ComapniesInvestemetGraph'
 import { ComapniesSectors } from './components/CompaniesSectors'
+import { ValidatesFormModal } from './components/Modal/ValidatedFormModal'
 
 // Component Styles
 const Container = styled.div`
@@ -51,7 +52,7 @@ export const Page: React.FC = () => {
       <ComapniesSectors companies={companies} />
       <ComapniesInvestemetGraph companies={companies} />
       <ComapniesOverviewTable companies={companies} openModal={openModal} />
-      <AddNewCompanyModal showModal={showModal} setShowModal={setShowModal} />
+      <ValidatesFormModal showModal={showModal} setShowModal={setShowModal} />
     </Container>
   )
 }
