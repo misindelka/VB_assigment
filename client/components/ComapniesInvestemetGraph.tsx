@@ -2,6 +2,15 @@
 import styled from 'styled-components'
 import { Chart } from 'react-google-charts'
 
+// interna Imports
+import { CompanyType } from '@client/graphql'
+
+// types
+
+interface IProps {
+  companies: CompanyType[]
+}
+
 // Component Styles
 const Container = styled.div`
   display: flex;
@@ -19,9 +28,9 @@ const TitleWrapper = styled.div`
 `
 
 // Component
-export const ComapniesInvestemetGraph = ({ companies }: any) => {
-  const companiesData = companies?.map(i => {
-    return [i.name, i.investmentSize]
+export const ComapniesInvestemetGraph: React.FC<IProps> = ({ companies }) => {
+  const companiesData = companies?.map(({ name, investmentSize }: any) => {
+    return [name, investmentSize]
   })
   const donutConfig = ['name', 'amount']
   const data = [donutConfig]?.concat(companiesData)
