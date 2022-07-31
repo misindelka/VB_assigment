@@ -12,10 +12,11 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.7",
+    "@apollo/client": "^3.5.7", 
     "@types/yup": "^0.29.14",
     "apexcharts": "^3.35.4",
     "apollo-server-core": "^3.6.2",
+
     "apollo-server-express": "^3.6.2",
     "casual": "^1.6.2",
     "express": "^4.17.2",
